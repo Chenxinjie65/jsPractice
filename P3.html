@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            margin: auto;  
+            width: 250px;       
+        }
+        input{
+            color: brown;
+        }
+        #show{
+            border-style: solid;
+            border-width: 1px;
+            background-color: aqua;
+            height: 170px;
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 搜索数据匹配 -->
+    <div class="content">
+        <div class="search">
+            <input type="text" id="look" placeholder="请输入关键字">
+            <button>搜索</button>
+        </div>
+        <div id="show"></div>
+    </div>
+    <script>
+        arr = ['语文1','语文2','数学1','数学2','英语1','英语2'];
+        var input = document.getElementById('look');
+        input.onkeyup = function() {
+            show.style.display = 'block';
+            let str = '';
+            arr.forEach((item)=>{
+                let res = item.indexOf(input.value);
+                if(res != -1){
+                    str += '<p>'+item+'</p>';
+                }
+            })
+            if(!input.value || !str) {
+                show.innerHTML = '<p>暂无结果</p>'
+            }else{
+                show.innerHTML = str;
+            }
+        }
+        input.onblur = function() {
+            show.style.display = 'none';
+            input.value = '';
+        }
+        window.onload=(()=>{
+            show.style.display = 'none';
+            input.value = '';
+        })
+    </script>
+</body>
+</html>

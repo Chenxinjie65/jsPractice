@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 600px;
+            display: none;           
+        }
+        ul,li{
+            margin-left: 0;
+            background-color: #ccc;
+            list-style: none;
+            text-align: center;    
+            padding: 0;
+        }
+        li{
+            width: 100px;
+            height: 40px;
+            float: left; 
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 选项卡功能 -->
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>      
+        </ul>
+        <br><br>
+        <div>
+            <p></p>
+            <img src="https://ts1.cn.mm.bing.net/th/id/R-C.b2e885f0845a186932daa4fc7bc6e7c5?rik=qwU2lFedqluskg&riu=http%3a%2f%2fpic27.photophoto.cn%2f20130509%2f0007020133766194_b.jpg&ehk=QB22exRxqd9SU4oJtzkowAoQV1okkbGeesjzg%2be7anU%3d&risl=&pid=ImgRaw&r=0" alt="图片找不到了">
+            <img src="https://ts1.cn.mm.bing.net/th/id/R-C.addd62824af12b04569b1d6d35d3503c?rik=%2frZX7QD%2bj5j%2bLg&riu=http%3a%2f%2fpic22.nipic.com%2f20120701%2f10060471_105654428301_2.jpg&ehk=2CsxiVJEZrVwUtX6YppT4XtdMRS%2fB0Wa0%2bfN244bVUY%3d&risl=&pid=ImgRaw&r=0" alt="图片找不到了">
+            <img src="https://img.zcool.cn/community/019b615de70a5ba8012138534fa69f.jpg@1280w_1l_2o_100sh.jpg" alt="图片找不到了">
+            <img src="https://pic4.zhimg.com/v2-6acd7d373f4d25f036df523c50e72ac0_r.jpg?source=1940ef5c" alt="图片找不到了" class="c">
+        </div>
+    </div>
+    <script>
+        let li = document.getElementsByTagName('li');
+        let img = document.getElementsByTagName('img');
+        
+        for(let i = 0; i <= 3; i++){
+            li[i].onmouseenter = function(){  
+                li[i].style.backgroundColor = 'blue';
+                img[i].style.display = 'block';
+            }
+            li[i].onmouseleave = function(){
+                li[i].style.backgroundColor = '#ccc';
+                img[i].style.display = 'none';
+            }
+        }
+        
+    </script>
+</body> 
+</html>
