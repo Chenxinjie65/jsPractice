@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #he{
+            width: 100px;
+            height: 100px;
+            background-color: blue ;
+        }
+    </style>
+</head>
+<body>
+    <!-- 鼠标导航器 -->
+    <div id="1">鼠标绑定</div>
+    <div id="he"></div>
+    <script>
+        document.onmousemove = ()=> {
+            var event = event || window.event;
+            let th = document.getElementById('he');
+            th.style.marginLeft= event.clientX-50 + 'px';
+            th.style.marginTop = event.clientY-50 + 'px';
+        }       
+    </script>
+</body>
+</html>

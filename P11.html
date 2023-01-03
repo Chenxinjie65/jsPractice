@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blue ;
+        }
+    </style>
+</head>
+<body>
+    <!-- 移动的盒子 -->
+    <div id="he"></div>
+    <br>
+    <button>点击开始</button>
+    <button>点击停止</button>
+    <script>
+        let but = document.getElementsByTagName('button');
+        let he = document.getElementById('he');
+        let speed = 3;
+        let num=0;
+        let timer = null;
+        but[0].onclick = ()=>{
+            if(timer == null){
+                timer = setInterval(()=>{
+                    num += speed;
+                    if(num >= document.body.clientWidth-100 || num<=0){
+                        speed = -speed;
+                }
+                he.style.marginLeft = num +'px';
+            },10)
+            }
+        }
+        but[1].onclick = ()=>{
+            clearInterval(timer);
+            timer = null;
+        }
+    </script>
+</body>
+</html>

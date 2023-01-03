@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 敏感词过滤 -->
+    <h2>敏感词过滤</h2>
+    <p>
+        <textarea name="" id="6" cols="30" rows="10"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="发布" id="input">
+    </p>
+    <p id="res"></p>
+    <script>
+        let text = document.getElementById('6');
+        let input = document.getElementById('input');
+        let result = document.getElementById('res');
+        reg = /哈哈|66/g;
+        input.onclick = (()=>{
+            result.innerText = text.value.replace(reg,'**');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all{
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            width: 800px;
+            height: 300px;
+        }
+        /* .first,.second{
+            width: 350px;
+            height: 80px;
+        }
+        .chair{
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            background-color:antiquewhite;
+            width: 85px;
+            height: 80px;
+        } */
+        td{
+            width: 150px;
+            height: 50px;
+            background-color: antiquewhite;
+            margin-top: 50px;
+        }
+        .screen{
+            border-style: solid;
+            border-width: 1px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            margin-left: 250px;
+            margin-top: 30px;
+            padding-top: 20px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <!-- 电影院选座 -->
+    <div class="all">
+        <div class="screen">电影屏幕</div>
+        <br><br>
+        <table align="center"> 
+            <tr>
+                <td>1排1座</td>
+                <td>1排2座</td>
+                <td>1排3座</td>
+                <td>1排4座</td>
+            </tr>
+            <tr>
+                <td>2排1座</td>
+                <td>2排2座</td>
+                <td>2排3座</td>
+                <td>2排4座</td>
+            </tr>
+        </table>
+        <!-- <div class="first">
+            <span class="chair"></span>
+            <span class="chair"></span>
+            <span class="chair"></span>
+            <span class="chair"></span>
+        </div>
+        <div class="second">
+            <span class="chair">2排1座</span>
+            <span class="chair"></span>
+            <span class="chair"></span>
+            <span class="chair"></span>
+        </div>   -->
+        
+    </div>
+    <script>
+        let chair = document.getElementsByTagName('td');
+        let choose = [0,0,0,0,0,0,0,0];
+        for(let i = 0; i <= chair.length; i++){
+            chair[i].onclick = ()=>{
+                if(choose[i] == 0){
+                    chair[i].style.backgroundColor = 'pink';
+                    chair[i].innerHTML = '已选中';
+                    choose[i] = 1;
+                }else{
+                    chair[i].style.backgroundColor = 'antiquewhite';
+                    chair[i].innerHTML = (Math.floor(i/4)+1)+ '排'+ (i%4+1) + '座';
+                    choose[i] = 0;
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

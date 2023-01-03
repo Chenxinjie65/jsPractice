@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kuang{
+            border-color:black;
+            border-style: solid;
+            border-width: 2px;
+            width: 300px;
+        }
+        .in{
+            width: 0px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 进度条功能 -->
+    <div class="kuang">
+        <div class="in">0%</div>
+    </div>   
+     <button onclick="install()">安装</button>  
+     <script>
+        let begin = false;
+        function install() {
+            let col = document.getElementsByClassName('in');
+            let num = 0;
+            if(!begin){
+                setInterval(()=>{
+                num += 10;
+                begin = true;
+                if(num >= 300){
+                    num=300;
+                }
+                col[0].style.width = num +'px';
+                col[0].innerHTML = Math.ceil(100*num/300) + '%';  
+            },100) 
+            }
+            
+        }  
+     </script>
+</body>
+</html>

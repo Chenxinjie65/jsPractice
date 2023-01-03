@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            height: 2000px;
+        }
+        .goTop{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            text-align: center;
+            line-height: 100px;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回首屏功能 -->
+        <div class="content">
+            <h1 >返回首屏</h1>
+            <div class="goTop" >返回</div>
+        </div>
+        <script>     
+            let bot = document.getElementsByTagName('div');
+            window.onscroll = ()=>{
+                if(pageYOffset >= 200){           
+                    bot[1].style.display = 'block';
+                }else{
+                    bot[1].style.display = 'none';
+                }
+                bot[1].onmouseenter = (()=>{
+                    bot[1].style.backgroundColor = 'blue';
+                })
+                bot[1].onmouseleave = (()=>{
+                    bot[1].style.backgroundColor = 'antiquewhite';
+                })
+                bot[1].onmousedown = (()=>{
+                    bot[1].style.backgroundColor = 'red';
+                })
+                bot[1].onmouseup = (()=>{
+                    bot[1].style.backgroundColor = 'antiquewhite';
+                })
+                bot[1].onclick = (()=>{
+                    window.scrollTo(0,0);
+                    bot[1].style.display = 'none';
+                })
+            }
+            
+            
+        </script>
+</body>
+</html>

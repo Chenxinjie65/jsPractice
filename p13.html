@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border-style: solid;
+            text-align: center;
+            width: 500px;
+        }
+        td{
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            width: 100px;
+        }
+        th{
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            width: 100px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 学生信息录入系统 -->
+    <form action="">
+        <h1>学生信息录入系统</h1>
+        <p>姓名：<input type="text" value="" id="1"></p>
+        <p>年龄：<input type="text" value=""></p>
+        <p>性别：<input type="text" value=""></p>
+        <p>手机号：<input type="text" value=""></p>
+        <p><input type="submit" name="" id="sub" value="确认提交"></p>
+    </form>
+    <table>
+        <tr class="content">
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>123123123123</th>
+            <th>删除</th>
+        </td>
+        <tr class="" id="1">
+            <td>张三</td>
+            <td>19</td>
+            <td>男</td>
+            <td>123123123123</td>
+            <td class="delet">删除</td>
+        </td>
+    </table>
+    <script>
+
+
+        let sub = document.getElementById('sub');
+        let input = document.getElementsByTagName('input');
+        let tab = document.getElementsByTagName('table');
+        let num = 1;  
+        // num 为录入信息的学生数量
+        sub.onclick = ()=> {
+            if(input[0].value!='' && input[1].value!='' && input[2].value!='' && input[3].value!='') {
+                tab[0].innerHTML += "<tr> <td>"
+                             +input[0].value+
+                "</td> <td>" +input[1].value+
+                "</td> <td>" +input[2].value+
+                "</td> <td>" +input[3].value+
+                "</td> <td class='delet'>删除</td></tr>"
+                num++;
+                for(let i = 0; i <= 3; i++){
+                    input[i].value = ''; 
+                }
+            }
+            // else{
+            //     alert('请正确输入!');
+            // } 
+            
+            return false;
+        }
+        //因为表格内容会变，所以要加一个计时器来刷新标签元素
+        setInterval(()=>{
+            for(let j = 0; j <= num-1; j++) {
+                let hang = document.getElementsByTagName('tr');
+                let del = document.getElementsByClassName('delet'); 
+                del[j].onclick = ()=>{
+                    hang[j+1].remove();
+                    num--;
+                }
+            }
+        },100)
+            
+    </script>
+</body>
+</html>

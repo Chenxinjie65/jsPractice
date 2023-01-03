@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50px;
+            height: 70px;
+        }
+        #big{
+            width: 210px;
+            height: 300PX;
+        }
+    </style>
+</head>
+<body>
+    <!-- 相册选择功能 -->
+    <div>
+        <img src="" alt="" id="big">
+    </div>
+    <div >
+            <img class="small" src="https://ts1.cn.mm.bing.net/th/id/R-C.b2e885f0845a186932daa4fc7bc6e7c5?rik=qwU2lFedqluskg&riu=http%3a%2f%2fpic27.photophoto.cn%2f20130509%2f0007020133766194_b.jpg&ehk=QB22exRxqd9SU4oJtzkowAoQV1okkbGeesjzg%2be7anU%3d&risl=&pid=ImgRaw&r=0" alt="图片找不到了">
+            <img class="small" src="https://ts1.cn.mm.bing.net/th/id/R-C.addd62824af12b04569b1d6d35d3503c?rik=%2frZX7QD%2bj5j%2bLg&riu=http%3a%2f%2fpic22.nipic.com%2f20120701%2f10060471_105654428301_2.jpg&ehk=2CsxiVJEZrVwUtX6YppT4XtdMRS%2fB0Wa0%2bfN244bVUY%3d&risl=&pid=ImgRaw&r=0" alt="图片找不到了">
+            <img class="small" src="https://img.zcool.cn/community/019b615de70a5ba8012138534fa69f.jpg@1280w_1l_2o_100sh.jpg" alt="图片找不到了">
+            <img class="small" src="https://pic4.zhimg.com/v2-6acd7d373f4d25f036df523c50e72ac0_r.jpg?source=1940ef5c" alt="图片找不到了" >
+    </div>
+    <script>
+        let big = document.getElementById('big');
+        let imgs = document.getElementsByClassName('small');
+        for(let i = 0; i <= imgs.length; i++){
+            imgs[i].onmouseenter = (()=>{
+                big.src = imgs[i].src;
+            })
+        }
+    </script>
+</body>
+</html>
