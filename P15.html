@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        td,th{
+            border-style: solid;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+        #chou{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 抽奖功能 -->
+    <table>
+        <tr>
+            <td>奖品1</td>
+            <td>奖品2</td>
+            <td>奖品3</td>
+        </tr>
+        <tr>
+            <td>奖品4</td>
+            <th id="chou">点击抽奖</th>
+            <td>奖品5</td>
+        </tr>
+        <tr>
+            <td>奖品6</td>
+            <td>奖品7</td>
+            <td>奖品8</td>
+        </tr>
+    </table>
+    <script>
+        let timer = null;
+        let num =0;
+        $("#chou").click(()=>{
+            if(timer == null){
+                let timer = setInterval(()=>{
+                    let rand = Math.floor(9*Math.random()-0.001);
+                    // console.log(rand);
+                    for(let i = 0; i <= 7; i++) {
+                        $("td").eq(i).css("background-color","white");
+                    }
+                    $("td").eq(rand).css("background-color","yellow");
+                    num++;
+                    if(num == 30){
+                        clearInterval(timer);
+                        timer = null;
+                        num = 0;
+                    }
+                },100);   
+            }
+        })
+        
+    </script>
+</body>
+</html>

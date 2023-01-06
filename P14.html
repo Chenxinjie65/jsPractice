@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 练习jQuary -->
+    <h1>这是标题</h1>
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+    <p>段落4</p>
+    <button>隐藏段落1</button>
+    <button id="xian">显示段落1</button>
+    <button id="dan">淡出效果</button>
+    <button id="tran">转化效果</button>
+    <button id="hua">滑动效果</button>
+    <h2></h2>
+    <script>
+        // 显示隐藏
+        $(document).ready(function(){
+            $("button:first").click(()=>{
+                $("p:first").hide();
+            })
+            $("#xian").click(()=>{
+                $("p:first").toggle();
+            })
+        // 淡入淡出
+            $("#dan").click(()=>{
+                $("p").fadeOut("slow");
+            })
+            $("#tran").click(()=>{
+                $("p").fadeToggle("slow");
+            })
+        // 滑动效果
+            $("#hua").click(()=>{
+            $("p").slideUp();
+            })
+        //创建动画 animate()    stop()停止滑动
+
+        //ajax
+        $("h2").load("./ajx.json");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+            }
+        
+    </style>
+</head>
+<body>
+    <!-- 轮播图 -->
+    <div id="img">
+        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.b2e885f0845a186932daa4fc7bc6e7c5?rik=qwU2lFedqluskg&riu=http%3a%2f%2fpic27.photophoto.cn%2f20130509%2f0007020133766194_b.jpg&ehk=QB22exRxqd9SU4oJtzkowAoQV1okkbGeesjzg%2be7anU%3d&risl=&pid=ImgRaw&r=0" alt="图片找不到了">
+    </div>
+    <script>
+        let num = 0;
+        $(document).ready(()=>{
+            setInterval(()=>{
+                if(num == 4){
+                    num = 0;
+                }
+                if(num == 0){
+                    $("img").attr("src","https://ts1.cn.mm.bing.net/th/id/R-C.b2e885f0845a186932daa4fc7bc6e7c5?rik=qwU2lFedqluskg&riu=http%3a%2f%2fpic27.photophoto.cn%2f20130509%2f0007020133766194_b.jpg&ehk=QB22exRxqd9SU4oJtzkowAoQV1okkbGeesjzg%2be7anU%3d&risl=&pid=ImgRaw&r=0");
+                }else if(num == 1){
+                    $("img").attr("src","https://ts1.cn.mm.bing.net/th/id/R-C.addd62824af12b04569b1d6d35d3503c?rik=%2frZX7QD%2bj5j%2bLg&riu=http%3a%2f%2fpic22.nipic.com%2f20120701%2f10060471_105654428301_2.jpg&ehk=2CsxiVJEZrVwUtX6YppT4XtdMRS%2fB0Wa0%2bfN244bVUY%3d&risl=&pid=ImgRaw&r=0");
+                }else if(num == 2){
+                    $("img").attr("src","https://img.zcool.cn/community/019b615de70a5ba8012138534fa69f.jpg@1280w_1l_2o_100sh.jpg");
+                }else if(num == 3){
+                    $("img").attr("src","https://pic4.zhimg.com/v2-6acd7d373f4d25f036df523c50e72ac0_r.jpg?source=1940ef5c");
+                }
+                 num++;
+            },1000)
+        //     $("button").click(()=>{
+        //     $("img").attr("src","https://pic4.zhimg.com/v2-6acd7d373f4d25f036df523c50e72ac0_r.jpg?source=1940ef5c");
+        // })
+        })
+
+        
+        
+    </script>
+</body>
+</html>
